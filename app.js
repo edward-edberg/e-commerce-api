@@ -12,6 +12,7 @@ const connectDB = require("./db/connect");
 
 // router
 const authRouter = require("./routes/authRoutes");
+const userRouter = require("./routes/userRoutes");
 
 // error handler
 const notFoundMiddleware = require("./middleware/not-found");
@@ -25,12 +26,14 @@ app.get("/", (req, res) => {
   // console.log(req.cookies);
   res.send(`<h1>E-commerce API</h1>`);
 });
+
 app.get("/api/v1", (req, res) => {
   console.log(req.signedCookies);
   res.send(`<h1>E-commerce API</h1>`);
 });
 
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/users", userRouter);
 
 // middleware
 app.use(notFoundMiddleware);
