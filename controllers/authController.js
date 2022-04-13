@@ -3,7 +3,11 @@ const { StatusCodes } = require("http-status-codes");
 // const { BadRequestError, UnauthenticatedError } = require("../errors");
 const CustomError = require("../errors");
 // const jwt = require("jsonwebtoken");
-const { createJWT, isTokenValid } = require("../utils");
+const {
+  createJWT,
+  isTokenValid,
+  attachCookiesToResponse,
+} = require("../utils");
 
 const register = async (req, res) => {
   const { email, name, password } = req.body;
@@ -17,9 +21,8 @@ const register = async (req, res) => {
   const role = isFirstAccount ? "admin" : "user";
   const user = await User.create({ name, email, password, role });
   const tokenUser = { name: user.name, userId: user._id, role: user.role };
-  const token = createJWT({ payload: tokenUser });
-  // res.send("register");
-  res.status(StatusCodes.CREATED).json({ user: tokenUser, token });
+  attachCookiesToResponse({ res, user: tokenUser });
+  res.status(StatusCodes.CREATED).json({ user: tokenUser });
 };
 
 const login = async (req, res) => {
