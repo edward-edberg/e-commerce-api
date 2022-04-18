@@ -164,29 +164,29 @@
 
 #### Product Model
 
-- [] create Product.js in models folder
-- [] create Schema
-- [] name : {type:String}
-- [] price: {type:Number}
-- [] description: {type:String}
-- [] image: {type:String}
-- [] category: {type:String}
-- [] company: {type:String}
-- [] colors: {type:[]}
-- [] featured: {type:Boolean}
-- [] freeShipping: {type:Boolean}
-- [] inventory:{type:Number}
-- [] averageRating:{type:Number}
-- [] user
-- [] set timestamps
-- [] export Product model
+- [x] create Product.js in models folder
+- [x] create Schema
+- [x] name : {type:String}
+- [x] price: {type:Number}
+- [x] description: {type:String}
+- [x] image: {type:String}
+- [x] category: {type:String}
+- [x] company: {type:String}
+- [x] colors: {type:[]}
+- [x] featured: {type:Boolean}
+- [x] freeShipping: {type:Boolean}
+- [x] inventory:{type:Number}
+- [x] averageRating:{type:Number}
+- [x] user
+- [x] set timestamps
+- [x] export Product model
 
 #### Product Structure
 
-- [] add productController file in controllers
-- [] export (createProduct, getAllProducts,
-  getSingleProduct, updateProduct, deleteProduct, uploadImage) functions
-- [] res.send('function name')
+- [x] add productController file in controllers
+- [x] export (createProduct, getAllProducts,
+      getSingleProduct, updateProduct, deleteProduct, uploadImage) functions
+- [x] res.send('function name')
 - [] setup productRoutes file in routes
 - [] import all controllers
 - [] only getAllProducts and getSingleProduct accessible to public
